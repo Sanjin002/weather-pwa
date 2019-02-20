@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import BootstrapVue from 'bootstrap-vue'
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Home from '@/components/Home'
 import Crops from '@/components/Crops'
 
 
@@ -13,8 +13,8 @@ export default new Router({
   routes: [
     {
       	path: '/',
-      	name: 'Hello',
-     	component: Hello,
+      	name: 'Home',
+     	component: Home,
     },
     {
     	path: '/crops',
