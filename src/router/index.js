@@ -9,11 +9,12 @@ import Crops from '@/components/Crops'
 Vue.use(BootstrapVue)
 Vue.use(Router)
 
+
 export default new Router({
   routes: [
     {
-      	path: '/',
-      	name: 'Home',
+      path: '/',
+      name: 'Home',
      	component: Home,
     },
     {
@@ -23,3 +24,6 @@ export default new Router({
     }
   ]
 })
+
+
+
