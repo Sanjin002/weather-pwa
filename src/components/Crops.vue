@@ -5,66 +5,84 @@
     <b-col>
         <div>
           <b-card
-                title="Corn"
-                img-src="https://picsum.photos/600/300/?image=25"
+                title="Forest"
+                img-src="https://picsum.photos/600/300/?image=28"
                 img-alt="Image"
                 img-top
                 tag="article"
                 style="max-width: 20rem;"
                 class="mb-2">
-                <b-button @click="showModal">Show more</b-button>
+                <b-button @click="showModal">Crop info</b-button>
 
-                   <b-modal ref="myModalRef" hide-footer title="Using Component Methods">
+                   <b-modal ref="myModalRef" hide-footer title="smeče">
                      <div class="d-block text-center">
                        <h3>Hello From My Modal!</h3>
                      </div>
-                        <b-button class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-button>
+                        <b-button class="mt-3" variant="light" block @click="hideModal">Close Me</b-button>
                    </b-modal>
           </b-card>
         </div>
 
         <div>
-          <b-card
-                title="Card Title"
-                img-src="https://picsum.photos/600/300/?image=25"
+         <b-card
+                title="Snow"
+                img-src="https://picsum.photos/600/300/?image=29"
                 img-alt="Image"
                 img-top
                 tag="article"
                 style="max-width: 20rem;"
                 class="mb-2">
-                <b-button @click="showModal">Show more</b-button>
+                <b-button @click="showModal">Crop info</b-button>
 
-                   <b-modal ref="myModalRef" hide-footer title="Using Component Methods">
+                   <b-modal ref="myModalRef" hide-footer title="smeče">
                      <div class="d-block text-center">
                        <h3>Hello From My Modal!</h3>
                      </div>
-                        <b-button class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-button>
+                        <b-button class="mt-3" variant="light" block @click="hideModal">Close Me</b-button>
                    </b-modal>
           </b-card>
         </div>
     </b-col>
     <b-col>
          <div>
-          <b-button @click="showModal">Show more</b-button>
+          <b-card
+                title="Cup"
+                img-src="https://picsum.photos/600/300/?image=30"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem;"
+                class="mb-2">
+                <b-button @click="showModal">Crop info</b-button>
 
-          <b-modal ref="myModalRef" hide-footer title="Using Component Methods">
-            <div class="d-block text-center">
-               <h3>Hello From My Modal!</h3>
-            </div>
-            <b-button class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-button>
-         </b-modal>
+                   <b-modal ref="myModalRef" hide-footer title="smeče">
+                     <div class="d-block text-center">
+                       <h3>Hello From My Modal!</h3>
+                     </div>
+                        <b-button class="mt-3" variant="light" block @click="hideModal">Close Me</b-button>
+                   </b-modal>
+          </b-card>
         </div>
     </b-col>
     <b-col>
          <div>
-          <b-button @click="showModal">Show more</b-button>
+         <b-card
+                title="Ugly feet"
+                img-src="https://picsum.photos/600/300/?image=31"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem;"
+                class="mb-2">
+                <b-button @click="showModal">Crop info</b-button>
 
-          <b-modal ref="myModalRef" hide-footer title="Using Component Methods">
-            <div class="d-block text-center">
-               <h3>Hello From My Modal!</h3>
-            </div>
-            <b-button class="mt-3" variant="light" block @click="hideModal">Close Me</b-button>
-         </b-modal>
+                   <b-modal ref="myModalRef" hide-footer title="Info">
+                     <div class="d-block text-center">
+                       <h3>Hello From My Modal!</h3>
+                     </div>
+                        <b-button class="mt-3" variant="light" block @click="hideModal">Close Me</b-button>
+                   </b-modal>
+          </b-card>
         </div>
     </b-col>
   </b-row>
@@ -93,5 +111,5 @@ export default
 
 </script>
 <style scoped>
-
+ 
 </style>
