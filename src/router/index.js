@@ -4,6 +4,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Crops from '@/components/Crops'
+import Forecast from '@/components/Forecast'
 
 
 Vue.use(BootstrapVue)
@@ -21,7 +22,13 @@ export default new Router({
     	path: '/crops',
     	name: 'Crops',
     	component: Crops,
+    },
+    {
+      path: '/forecast',
+      name: 'Forecast',
+      component: Forecast,
     }
+
   ]
 })
 

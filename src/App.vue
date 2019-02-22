@@ -2,7 +2,7 @@
   <div id="app">
      
      <Navbar></Navbar>
-     <Navbar2></Navbar2>
+     
     
      <main>
       
@@ -16,21 +16,23 @@
   import Crops from '@/components/Crops'
   //import Home from '@/components/Home'
   import Navbar from '@/components/Navbar'
-  import Navbar2 from '@/components/Navbar2'
+  
 export default {
   name: 'App',
   components: {
     Crops,
     //Home,
-    Navbar,
-    Navbar2
+    Navbar
+    
   }
 }
 </script>
 
 <style>
 body {
-  margin: 0;
+  margin: 0 auto;
+ 
+
 }
 
 
