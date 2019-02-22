@@ -4,7 +4,7 @@
   <b-nav class="navbar">
     <b-nav-item to="/">Home</b-nav-item>
     <b-nav-item to="/Crops">Crops</b-nav-item>
-    <b-nav-item>Another Link</b-nav-item>
+    <b-nav-item to="/Forecast">Forecast</b-nav-item>
     <b-nav-item >Disabled</b-nav-item>
   </b-nav>
 
@@ -29,5 +29,7 @@ export default {
 .navbar {
   display: inline-block;
   float: left;
+  
+
 }
 </style>

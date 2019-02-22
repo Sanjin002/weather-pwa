@@ -2,7 +2,7 @@
   <div class="home">
     <img src="./assets/agro.png" alt="Vue.js PWA">
     <h1>{{ msg }}</h1>
-    <h2>Menu</h2>
+    
   
   </div>
 </template>

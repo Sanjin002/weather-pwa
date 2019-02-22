@@ -15,19 +15,22 @@
   import Crops from '@/components/Crops'
   //import Home from '@/components/Home'
   import Navbar from '@/components/Navbar'
+
 export default {
   name: 'App',
   components: {
     Crops,
     //Home,
-    Navbar,
+	Navbar
   }
 }
 </script>
 
 <style>
 body {
-  margin: 0;
+  margin: 0 auto;
+ 
+
 }
 
 
