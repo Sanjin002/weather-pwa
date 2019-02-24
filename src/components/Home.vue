@@ -1,9 +1,11 @@
 <template>
   <div class="home">
+    <b-container fluid class="p-4 bg-dark">
+
     <img src="./assets/agro.png" alt="Vue.js PWA">
     <h1>{{ msg }}</h1>
     
-  
+  </b-container>
   </div>
 </template>
 

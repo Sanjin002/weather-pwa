@@ -1,6 +1,36 @@
 <template>
 <div>
-  <b-container class="bv-example-row">
+  
+    <div v-for="item in items">
+    
+      <b-container fluid class="p-4 bg-dark bv-example-row">
+        <b-row>
+      <b-card
+                title="bla"
+                img-src="https://picsum.photos/600/300/?image=28"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem;"
+                class="mb-2">
+                <b-button @click="showModal">Crop info</b-button>
+
+                   <b-modal ref="myModalRef" hide-footer title="smeče">
+                     <div class="d-block text-center">
+                       <h3>Hello From My Modal!</h3>
+                     </div>
+                        <b-button class="mt-3" variant="light" block @click="hideModal">Close Me</b-button>
+                   </b-modal>
+          </b-card>
+           </b-row>
+     <h3>{{ item.message }}</h3>
+     </b-container>
+  
+    </div>
+  
+
+     
+<b-container class="bv-example-row">
   <b-row>
     <b-col>
         <div>
@@ -88,6 +118,7 @@
   </b-row>
 </b-container>
 </div>
+</div>
 </template>
 
 
@@ -104,7 +135,21 @@ export default
       hideModal() {
         this.$refs.myModalRef.hide()
       }
+    },
+    data() {
+      return {
+    items: [
+      { message: 'Foo' },
+      { message: 'Bar' },
+      { message: 'Kar' },
+      { message: 'Jar' },
+      { message: 'Ar' },
+      { message: 'Bla' },
+      { message: 'Sanjin'},
+
+    ]
     }
+  }
 }
  
  
