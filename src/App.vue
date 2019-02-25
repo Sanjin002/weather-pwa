@@ -28,19 +28,19 @@ export default {
 
 <style>
 body {
-  margin: 0 auto;
- 
-
+ background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url("./components/drama.jpg");
+ height: 100vh;
+ background-size: cover;
+ background-position: center;
 }
 
 
-
-main {
+ main {
   text-align: center;
   margin-top: 40px;
   
 }
-
+ 
 
 
 

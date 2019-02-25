@@ -108,7 +108,7 @@
 
                    <b-modal ref="myModalRef" hide-footer title="Info">
                      <div class="d-block text-center">
-                       <h3>Hello From My Modal!</h3>
+                       <h3>Hello!</h3>
                      </div>
                         <b-button class="mt-3" variant="light" block @click="hideModal">Close Me</b-button>
                    </b-modal>

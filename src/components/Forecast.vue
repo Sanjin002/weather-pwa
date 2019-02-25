@@ -2,29 +2,54 @@
 <div class="container">
   <div class="row">
     <div class="col-12 weather" >
-       <h1>{{  forecast.city }}   {{  forecast.date }}</h1>   
-           
-       <p>    </p>
-       <h2>Temp {{  forecast.temperature }} C</h2>
-       <h2>Humidity {{  forecast.humidity }} %</h2>
+       <h1>{{  forecast.city }} </h1>
+          
+         <h3>   {{  forecast.date }} </h3> 
+       <h2><img class="slika1" src="./assets/sunce.png">{{  forecast.temperature }} °C</h2>
+       <h2>Sunny</h2>
+          <div class="row">
+            <div class="col-12  ">
+            <h4>Humidity {{  forecast.humidity }} % </h4>
+            <h4>Perticipation {{  forecast.perticipation }} %</h4>
+            <h4>Wind {{  forecast.wind }} </h4>
+            </div>
+
+          </div>
            <div class="row">
-             <div class="tri col-4">
+             <div class="tri col-2">
               <h4>MONDAY</h4>
-              <p>Temp {{  forecast.temperature }} C</p>
-               <img class="slika" src="./assets/kisa.png">  
+              <p>  {{  forecast.temperature }} °C</p>
+               <img class="slika" src="./assets/kisa.png">
+               <p>Partly sunny</p>  
              </div>
                
-             <div class="tri col-4">
+             <div class="tri col-2">
               <h4>TUESDAY</h4>
-              <p>Temp {{  forecast.temperature }} C</p>
+              <p>  {{  forecast.temperature }} °C</p>
               <img class="slika" src="./assets/thunder.png">
+              <p>Rain</p> 
               
              </div>
              
-             <div class="tri col-4">
+             <div class="tri col-3">
                <h4>WEDNESDAY</h4>
-              <p>Temp {{  forecast.temperature }} C</p>
+              <p>  {{  forecast.temperature }} °C</p>
+              <img class="slika" src="./assets/kisa.png">
+              <p>Partly sunny</p> 
+            </div>
+
+            <div class="tri col-2">
+               <h4>THURSDAY</h4>
+              <p>  {{  forecast.temperature }} °C</p>
               <img class="slika" src="./assets/sunce.png">
+              <p>Sunny</p> 
+            </div>
+
+            <div class="tri col-3">
+               <h4>FRIDAY</h4>
+              <p>  {{  forecast.temperature }} °C</p>
+              <img class="slika" src="./assets/kisa.png">
+              <p>Partly sunny</p> 
             </div>
            </div>
 
@@ -43,12 +68,14 @@ export default {
   data () {
     return { 
       forecast: {
-          "city":"Rijeka",
-          "date":"13:00  28.2.2019",
-          "perticipation":'',
+          "city":"Rijeka, Croatia",
+          "date":"13:00  25.2.2019",
+          "perticipation":'10',
           "temperature": "28",
-          "humidity": "88",
+          "humidity": "28",
           "tstorm": "-",
+          "wind": "SW 1m/s ",
+          "barometar": " "
           
         }
        
@@ -60,7 +87,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container {
-  background-image: url("./assets/slika.jpg");
+  background-image:transparent, url("./assets/slika.jpg");
   
   background-size: cover;
   background-repeat: no-repeat;
@@ -69,8 +96,8 @@ export default {
 .weather {
   width: 500px;
   height: 600px;
-  padding: 50px;
-  border: 1px solid black;
+  padding: 10px 30px;
+  /*border: 1px solid black;*/
   justify-content: center;
 }
 .tri {
@@ -81,11 +108,18 @@ export default {
   
 }
 .slika {
+  width: 100px;
+  height: 100px;
+  background-image: transparent;
+}
+.slika1 {
   width: 150px;
   height: 150px;
   background-image: transparent;
 }
-
-
+p,h1,h2,h3,h4 {
+  color: white;
+}
+ 
 
 </style>
