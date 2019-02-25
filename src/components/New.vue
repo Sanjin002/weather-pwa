@@ -1,19 +1,30 @@
 <template>
   <div class="new">
-    
-    <h1>{{ msg }}</h1>
-    
-  
+  	{{ info.comments[1].body }}
+  	<div v-for="i in info.posts">
+  {{ i.id }}
+  {{ i.title}}
+</div>
+<div v-for="c in info.comments">
+  {{ c.id }}
+  {{ c.body }}
+</div>
   </div>
 </template>
 
 <script>
+	import axios from 'axios'
 export default {
   name: 'new',
   data () {
     return {
-      msg: ''
+      info: {}
     }
+  },
+  mounted () {
+    axios
+      .get('https://my-json-server.typicode.com/typicode/demo/db')
+      .then(response => (this.info = response.data));
   }
 }
 </script>

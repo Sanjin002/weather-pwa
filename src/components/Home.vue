@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <b-container fluid class="p-4 bg-dark">
+    <b-container>
 
     <img src="./assets/agro.png" alt="Vue.js PWA">
     <h1>{{ msg }}</h1>

@@ -1,6 +1,7 @@
 {
   "name": "weather-pwa",
   "short_name": "weather-pwa",
+
   "icons": [
     {
       "src": "/static/img/icons/android-chrome-192x192.png",
@@ -9,6 +10,14 @@
     },
     {
       "src": "/static/img/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+
+  "logo": [
+    {
+      "src": "/src/assets/agro.png",
       "sizes": "512x512",
       "type": "image/png"
     }

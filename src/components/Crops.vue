@@ -3,7 +3,7 @@
   
     <div v-for="item in items">
     
-      <b-container fluid class="p-4 bg-dark bv-example-row">
+      <b-container fluid class="p-4 bv-example-row">
         <b-row>
       <b-card
                 title="bla"
