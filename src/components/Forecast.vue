@@ -69,7 +69,7 @@ export default {
     return { 
       forecast: {
           "city":"Rijeka, Croatia",
-          "date":"13:00  25.2.2019",
+          "date":"14:00  25.2.2019",
           "perticipation":'10',
           "temperature": "28",
           "humidity": "28",

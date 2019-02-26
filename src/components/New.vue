@@ -1,13 +1,9 @@
 <template>
   <div class="new">
-  	{{ info.comments[1].body }}
-  	<div v-for="i in info.posts">
-  {{ i.id }}
-  {{ i.title}}
-</div>
-<div v-for="c in info.comments">
-  {{ c.id }}
-  {{ c.body }}
+  	{{ info[5].temperature }}
+  	<div v-for="city in info">
+  {{ city.humidity }}
+  {{ city.temperature}}
 </div>
   </div>
 </template>
@@ -23,13 +19,15 @@ export default {
   },
   mounted () {
     axios
-      .get('https://my-json-server.typicode.com/typicode/demo/db')
-      .then(response => (this.info = response.data));
+      .get('http://127.0.0.1:8000/weather/Rijeka/5')
+      .then(response => (this.info = response.data.day_1));
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-
+<style scoped>
+.new {
+  color: white;
+}
 </style>

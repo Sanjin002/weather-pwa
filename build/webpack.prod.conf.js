@@ -104,7 +104,11 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: 'service-worker.js',
       staticFileGlobs: ['dist/**/*.{js,html,css}'],
       minify: true,
-      stripPrefix: 'dist/'
+      stripPrefix: 'dist/',
+      runtimeCaching: [{
+        urlPattern: new RegExp('^http://127.0.0.1:8000/weather/'),
+        handler: 'networkFirst',
+      }],
     })
   ]
 })
