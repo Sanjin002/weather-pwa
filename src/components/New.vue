@@ -1,30 +1,39 @@
 <template>
   <div class="new">
-  	{{ info.comments[1].body }}
-  	<div v-for="i in info.posts">
-  {{ i.id }}
-  {{ i.title}}
+    <div>
+  <b-dropdown id="ddown1" text="Cities" class="m-md-2">
+    <div v-for="i in info">
+    <b-dropdown-item>{{ i.name }}</b-dropdown-item>
+  </div>
+    
+  </b-dropdown>
+</div>
+    <!-- {{ info.comments[1].body }} -->
+    <div v-for="i in info">
+  {{ i.name }}
+  {{ i.url}}
 </div>
 <div v-for="c in info.comments">
   {{ c.id }}
   {{ c.body }}
+  </div>
 </div>
   </div>
 </template>
 
 <script>
-	import axios from 'axios'
+  import axios from 'axios'
 export default {
   name: 'new',
   data () {
     return {
-      info: {}
+      info: []
     }
   },
   mounted () {
     axios
-      .get('https://my-json-server.typicode.com/typicode/demo/db')
-      .then(response => (this.info = response.data));
+      .get('http://127.0.0.1:8000/weather/')
+      .then(response => (this.info = response.data.cities));
   }
 }
 </script>
@@ -32,4 +41,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 
-</style>
+</style>->
