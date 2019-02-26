@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<b-container>
   <div class="row">
     <div class="col-12 weather" >
        <h1>{{  forecast.city }} </h1>
@@ -18,7 +18,7 @@
            <div class="row">
              <div class="tri col-2">
               <h4>MONDAY</h4>
-              <p>  {{  forecast.temperature }} °C</p>
+              <p>  {{  currentTemp }} °C</p>
                <img class="slika" src="./assets/kisa.png">
                <p>Partly sunny</p>  
              </div>
@@ -56,7 +56,7 @@
     </div>
 
   </div>
-</div>
+</b-container>
 
 
 
@@ -76,11 +76,9 @@ export default {
           "tstorm": "-",
           "wind": "SW 1m/s ",
           "barometar": " "
-          
         }
-       
-    }
-  }
+       }
+  }  
 }
 </script>
 
@@ -91,6 +89,7 @@ export default {
   
   background-size: cover;
   background-repeat: no-repeat;
+
  
 }
 .weather {
@@ -105,6 +104,7 @@ export default {
   margin-top: 20px;
   width: 30%;
   height: 350px;
+
   
 }
 .slika {

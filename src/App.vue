@@ -28,10 +28,12 @@ export default {
 
 <style>
 body {
- background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url("./components/drama.jpg");
+ background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url("./components/clouds.jpg");
  height: 100vh;
  background-size: cover;
  background-position: center;
+ background-attachment: fixed;
+
 }
 
 

@@ -1,12 +1,13 @@
 <template>
-  <div class="home">
-    <b-container fluid class="p-4 bg-dark">
-
-    <img src="./assets/agro.png" alt="Vue.js PWA">
-    <h1>{{ msg }}</h1>
-    
-  </b-container>
-  </div>
+<b-container class="bv-example-row">
+  <b-row>
+    <b-col>1 of 3</b-col>
+    <b-col>2 of 3</b-col>
+    <b-col>2 of 3</b-col>
+    <b-col>2 of 3</b-col>
+    <b-col>2 of 3</b-col>
+  </b-row>
+</b-container>
 </template>
 
 <script>
@@ -14,13 +15,15 @@ export default {
   name: 'home',
   data () {
     return {
-      msg: 'Welcome to Your AgroApp'
+     
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-
+<style scoped>
+.bv-example-row {
+  color:white;
+}
 </style>

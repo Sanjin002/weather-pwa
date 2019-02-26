@@ -3,7 +3,7 @@
   
     <div v-for="item in items">
     
-      <b-container fluid class="p-4 bg-dark bv-example-row">
+      <b-container fluid class="p-4 bv-example-row">
         <b-row>
       <b-card
                 title="bla"
@@ -13,11 +13,11 @@
                 tag="article"
                 style="max-width: 20rem;"
                 class="mb-2">
-                <b-button @click="showModal">Crop info</b-button>
+                <b-button @click="showModal">{{ item.message }}</b-button>
 
                    <b-modal ref="myModalRef" hide-footer title="smeče">
                      <div class="d-block text-center">
-                       <h3>Hello From My Modal!</h3>
+                       <h3>{{ item.message }}</h3>
                      </div>
                         <b-button class="mt-3" variant="light" block @click="hideModal">Close Me</b-button>
                    </b-modal>
@@ -56,7 +56,7 @@
         <div>
          <b-card
                 title="Snow"
-                img-src="https://picsum.photos/600/300/?image=29"
+                img-src="https://picsum.photos/200/300/?random"
                 img-alt="Image"
                 img-top
                 tag="article"
@@ -156,5 +156,8 @@ export default
 
 </script>
 <style scoped>
+.container {
+  display: inline;
+}
  
 </style>
