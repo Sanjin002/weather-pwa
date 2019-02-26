@@ -4,28 +4,28 @@
     <div class="col-12 weather" >
        <h1>{{  forecast.city }} </h1>
           
-         <h3>   {{  forecast.date }} </h3> 
+         <h3>   {{  forecast[0].hour }} </h3> 
        <h2><img class="slika1" src="./assets/sunce.png">{{  forecast.temperature }} °C</h2>
        <h2>Sunny</h2>
           <div class="row">
             <div class="col-12  ">
-            <h4>Humidity {{  forecast.humidity }} % </h4>
-            <h4>Perticipation {{  forecast.perticipation }} %</h4>
-            <h4>Wind {{  forecast.wind }} </h4>
+            <h4>Humidity {{  forecast[0].humidity }} % </h4>
+            <h4>Perticipation {{  forecast[0].perticipation }} %</h4>
+            <h4>Wind {{  forecast[0].wind }} </h4>
             </div>
 
           </div>
            <div class="row">
              <div class="tri col-2">
               <h4>MONDAY</h4>
-              <p>  {{  forecast.temperature }} °C</p>
+              <p>  {{  forecast[0].temperature }} °C</p>
                <img class="slika" src="./assets/kisa.png">
                <p>Partly sunny</p>  
              </div>
                
              <div class="tri col-2">
               <h4>TUESDAY</h4>
-              <p>  {{  forecast.temperature }} °C</p>
+              <p>  {{  forecast[1].temperature }} °C</p>
               <img class="slika" src="./assets/thunder.png">
               <p>Rain</p> 
               
@@ -33,21 +33,21 @@
              
              <div class="tri col-3">
                <h4>WEDNESDAY</h4>
-              <p>  {{  forecast.temperature }} °C</p>
+              <p>  {{  forecast[2].temperature }} °C</p>
               <img class="slika" src="./assets/kisa.png">
               <p>Partly sunny</p> 
             </div>
 
             <div class="tri col-2">
                <h4>THURSDAY</h4>
-              <p>  {{  forecast.temperature }} °C</p>
+              <p>  {{  forecast[3].temperature }} °C</p>
               <img class="slika" src="./assets/sunce.png">
               <p>Sunny</p> 
             </div>
 
             <div class="tri col-3">
                <h4>FRIDAY</h4>
-              <p>  {{  forecast.temperature }} °C</p>
+              <p>  {{  forecast[3].temperature }} °C</p>
               <img class="slika" src="./assets/kisa.png">
               <p>Partly sunny</p> 
             </div>
@@ -63,24 +63,20 @@
 </template>
 
 <script>
+  import axios from 'axios'
 export default {
   name: 'forecast',
   data () {
     return { 
-      forecast: {
-          "city":"Rijeka, Croatia",
-          "date":"14:00  25.2.2019",
-          "perticipation":'10',
-          "temperature": "28",
-          "humidity": "28",
-          "tstorm": "-",
-          "wind": "SW 1m/s ",
-          "barometar": " "
-          
-        }
+      forecast: []
        
     }
-  }
+  },
+  mounted () {
+    axios
+      .get('http://127.0.0.1:8000/weather/Rijeka/5')
+      .then(response => (this.forecast = response.data.day_2));
+  },
 }
 </script>
 

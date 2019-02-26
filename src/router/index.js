@@ -6,7 +6,8 @@ import Home from '@/components/Home'
 import Crops from '@/components/Crops'
 import Forecast from '@/components/Forecast'
 import New from '@/components/New'
-import Dropdown from 'vue-simple-search-dropdown';
+import Dropdown from 'vue-simple-search-dropdown'
+import DataCrops from '@/components/DataCrops';
 
 Vue.use(BootstrapVue)
 Vue.use(Router)
@@ -34,6 +35,11 @@ export default new Router({
       path: '/new',
       name: 'New',
       component: New,
+    },
+    {
+      path: '/data',
+      name: 'DataCrops',
+      component: DataCrops,
     }
 
   ]
