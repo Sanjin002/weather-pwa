@@ -17,7 +17,12 @@
   {{ c.id }}
   {{ c.body }}
   </div>
-</div>
+  <!-- 	{{ info[5].temperature }}
+  	<div v-for="city in info">
+  {{ city.humidity }}
+  {{ city.temperature}}
+
+</div> -->
   </div>
 </template>
 
@@ -39,6 +44,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
+.new {
+  color: white;
+}
+</style>
 
-</style>->
