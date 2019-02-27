@@ -1,10 +1,10 @@
 <template>
 <div class="container  ">
   <div class="row">
-    <div class="col-1">
+    <div class="col-2">
         
     </div>
-    <div class="col-11 weather" >
+    <div class="col-10 weather" >
        <h1>{{  forecast.city }} </h1>
           
          <h4>   {{  forecast.date }} </h4> 
