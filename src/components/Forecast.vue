@@ -1,59 +1,66 @@
 <template>
-<div class="container">
+<div class="container  ">
   <div class="row">
-    <div class="col-12 weather" >
+    <div class="col-1">
+        
+    </div>
+    <div class="col-11 weather" >
        <h1>{{  forecast.city }} </h1>
           
-         <h3>   {{  forecast.date }} </h3> 
-       <h2><img class="slika1" src="./assets/sunce.png">{{  forecast.temperature }} °C</h2>
+         <h4>   {{  forecast.date }} </h4> 
+       <h3><img class="slika1" src="./assets/sunce.png">{{  forecast.temperature }} °C</h3>
        <h2>Sunny</h2>
           <div class="row">
             <div class="col-12  ">
-            <h4>Humidity {{  forecast.humidity }} % </h4>
-            <h4>Perticipation {{  forecast.perticipation }} %</h4>
-            <h4>Wind {{  forecast.wind }} </h4>
+            <h5>Humidity {{  forecast.humidity }} % </h5>
+            <h5>Perticipation {{  forecast.perticipation }} %</h5>
+            <h5>Wind {{  forecast.wind }} </h5>
             </div>
 
           </div>
-           <div class="row">
-             <div class="tri col-2">
-              <h4>MONDAY</h4>
+   
+        <div class="row ">
+             <div class="tri col">
+              <h6>MONDAY</h6>
               <p>  {{  forecast.temperature }} °C</p>
                <img class="slika" src="./assets/kisa.png">
                <p>Partly sunny</p>  
              </div>
                
-             <div class="tri col-2">
-              <h4>TUESDAY</h4>
+             <div class="tri col">
+              <h6>TUESDAY</h6>
               <p>  {{  forecast.temperature }} °C</p>
               <img class="slika" src="./assets/thunder.png">
               <p>Rain</p> 
               
              </div>
              
-             <div class="tri col-3">
-               <h4>WEDNESDAY</h4>
+             <div class="tri col">
+               <h6>WEDNESDAY</h6>
               <p>  {{  forecast.temperature }} °C</p>
-              <img class="slika" src="./assets/kisa.png">
+              
+              <img class="slika"  src="./assets/kisa.png">
               <p>Partly sunny</p> 
             </div>
 
-            <div class="tri col-2">
-               <h4>THURSDAY</h4>
+            <div class="tri col">
+               <h6>THURSDAY</h6>
               <p>  {{  forecast.temperature }} °C</p>
               <img class="slika" src="./assets/sunce.png">
               <p>Sunny</p> 
             </div>
 
-            <div class="tri col-3">
-               <h4>FRIDAY</h4>
+            <div class="tri col">
+               <h6>FRIDAY</h6>
               <p>  {{  forecast.temperature }} °C</p>
               <img class="slika" src="./assets/kisa.png">
               <p>Partly sunny</p> 
             </div>
            </div>
+        </div>
 
-    </div>
+
+    
 
   </div>
 </div>
@@ -86,25 +93,33 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.container {
-  background-image:transparent, url("./assets/slika.jpg");
+
+.tri  {
   
-  background-size: cover;
-  background-repeat: no-repeat;
- 
+    
+   padding: 25px; 
+  background: rgba(255,255,255,.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
 }
+ 
+/
 .weather {
+
   width: 500px;
   height: 600px;
-  padding: 10px 30px;
+  
+  
   /*border: 1px solid black;*/
   justify-content: center;
+  background: rgba(255,255,255,.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  
 }
 .tri {
-  padding: 20px;
+  
   margin-top: 20px;
-  width: 30%;
-  height: 350px;
+  /*width: 30%;*/
+  height: 300px;
   
 }
 .slika {
@@ -112,13 +127,20 @@ export default {
   height: 100px;
   background-image: transparent;
 }
+img {
+  width: 100%;
+  height: auto;
+}
 .slika1 {
   width: 150px;
   height: 150px;
   background-image: transparent;
 }
-p,h1,h2,h3,h4 {
+p,h1,h2,h3,h4,h5,h6 {
   color: white;
+}
+.row {
+  padding-top: 40px;
 }
  
 

@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-     
+     <main>
      <Navbar></Navbar>
     
-     <main>
+     
       
       <router-view></router-view>
      </main>
@@ -28,10 +28,11 @@ export default {
 
 <style>
 body {
- background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url("./components/drama.jpg");
+ background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url("./components/drama.jpg") ;
  height: 100vh;
  background-size: cover;
  background-position: center;
+ background-attachment: fixed;
 }
 
 
