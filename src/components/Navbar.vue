@@ -1,5 +1,5 @@
 <template>
- <div class="row">
+ <!--<div class="row">
   <b-nav class="main-nav">
     <b-nav-item  class="li a  " to="/">Home</b-nav-item>
     <b-nav-item to="/Crops">Crops</b-nav-item>
@@ -7,7 +7,36 @@
     <b-nav-item  to="/New">New</b-nav-item>
     
   </b-nav>
- </div>
+ </div>-->
+
+ <div class="container-fluid">
+  <b-navbar class="crta" toggleable="lg" type="dark"  >
+    
+
+    <b-navbar-toggle target="nav_collapse" />
+
+    <b-collapse   is-nav id="nav_collapse">
+      <b-navbar-nav class="lista  ">
+        <b-nav-item class="link " to="/">HOME</b-nav-item>
+        <b-nav-item  class="link" to="/Forecast">FORECAST</b-nav-item>
+        <b-nav-item class="link"  to="/Crops">CROPS</b-nav-item>
+        <b-nav-item  class="link " to="/New">NEW</b-nav-item>
+      </b-navbar-nav>
+
+      <!-- Right aligned nav items -->
+      <b-navbar-nav class="ml-auto">
+        <b-nav-form>
+          <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search" />
+          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+        </b-nav-form>
+
+        
+
+        
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
+</div>
 </template>
 
 <script>
@@ -26,7 +55,7 @@ export default {
 <style scoped>
 /*.navbar {
   display: inline-block;
-  float: left;*/
+  float: left;
 .main-nav{
   float: left;
   list-style: none;
@@ -52,5 +81,35 @@ export default {
 .row{
   
   margin: auto;
+}*/
+.lista {
+  font-size: 25px;
+  color: white;
+  font-family: sans-serif;
+   
 }
+
+.lista.active .link {
+
+  border: 1px solid white;
+
+}
+.lista .link:hover {
+  
+  border: 1px solid white;
+  border-radius: 10px
+  /*font-weight: bold;*/
+   
+}
+.lista .link {
+  padding: 3px 20px;
+}
+.crta {
+  border-bottom:1px solid white;
+  padding-bottom:5px;
+  
+
+}
+
+
 </style>
