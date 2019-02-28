@@ -1,75 +1,48 @@
 <template>
 <div class="container  ">
   <div class="row">
-    <div class="col-2">
-        
-    </div>
-    <div class="col-10 weather" >
-       <h1>{{  forecast.city }} </h1>
-          
 
-         <h3>   {{  forecast[0].hour }} </h3> 
-       <h2><img class="slika1" src="./assets/sunce.png">{{  forecast.temperature }} °C</h2>
-       <h2>Sunny</h2>
-          <div class="row">
-            <div class="col-12  ">
-            <h4>Humidity {{  forecast[0].humidity }} % </h4>
-            <h4>Perticipation {{  forecast[0].perticipation }} %</h4>
-            <h4>Wind {{  forecast[0].wind }} </h4>
-            </div>
+<div v-for="f in forecast">
+  <h5>{{f}}</h5>
+  </div>
 
-          </div>
+    <!-- <div v-for="fore in forecast">
+      <h5>{{fore[2]}}</h5>
+      <div v-for="f in fore">
+        <h5>{{f.hour}}</h5>
+      </div>
+    </div> -->
+
+<!-- 
+    <div v-for="fore in forecast">
+    <div class="col-10 weather" >       
            <div class="row">
              <div class="tri col">
-              <h4>MONDAY</h4>
-              <p>  {{  forecast[0].temperature }} °C</p>
+              <h4>{{fore[0].hour}}</h4>
+              <p>  {{  fore[0].temperature }} °C</p>
 
                <img class="slika" src="./assets/kisa.png">
-               <p>Partly sunny</p>  
+               <p>Partly sunny</p>
              </div>
-               
-
-             <div class="tri col">
-              <h4>TUESDAY</h4>
-              <p>  {{  forecast[1].temperature }} °C</p>
-
-              <img class="slika" src="./assets/thunder.png">
-              <p>Rain</p> 
-              
              </div>
-             <div class="tri col">
-               <h4>WEDNESDAY</h4>
-              <p>  {{  forecast[2].temperature }} °C</p>
-              <img class="slika" src="./assets/kisa.png">
-              <p>Partly sunny</p> 
-            </div>
+             </div>0
 
-            <div class="tri col">
-               <h4>THURSDAY</h4>
-              <p>  {{  forecast[3].temperature }} °C</p>
-
-              <img class="slika" src="./assets/sunce.png">
-              <p>Sunny</p> 
-            </div>
-
-            <div class="tri col">
-               <h4>FRIDAY</h4>
-              <p>  {{  forecast[3].temperature }} °C</p>
-
-              <img class="slika" src="./assets/kisa.png">
-              <p>Partly sunny</p> 
-            </div>
            </div>
-        </div>
+           <div v-for="fore in forecasts">
+    <div class="col-10 weather" >       
+           <div class="row">
+             <div class="tri col">
+              <h4>{{fore.hour}}</h4>
+              <p>  {{  fore.temperature }} °C</p>
 
-
-    
-
+               <img class="slika" src="./assets/kisa.png">
+               <p>Partly sunny</p>
+             </div>
+             </div>
+             </div>
+           </div> -->
   </div>
 </div>
-
-
-
 </template>
 
 <script>
@@ -85,7 +58,7 @@ export default {
   mounted () {
     axios
       .get('http://127.0.0.1:8000/weather/Rijeka/5')
-      .then(response => (this.forecast = response.data.day_2));
+      .then(response => (this.forecast = response.data));
   },
 }
 </script>

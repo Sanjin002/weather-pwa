@@ -1,44 +1,26 @@
 <template>
   <div class="new">
-    <div>
-  <b-dropdown id="ddown1" text="Cities" class="m-md-2">
-    <div v-for="i in info">
-    <b-dropdown-item>{{ i.name }}</b-dropdown-item>
-  </div>
-    
-  </b-dropdown>
-</div>
-    <!-- {{ info.comments[1].body }} -->
-    <div v-for="i in info">
-  {{ i.name }}
-  {{ i.url}}
-</div>
-<div v-for="c in info.comments">
-  {{ c.id }}
-  {{ c.body }}
-  </div>
-  <!-- 	{{ info[5].temperature }}
+  	{{ info[5].temperature }}
   	<div v-for="city in info">
   {{ city.humidity }}
   {{ city.temperature}}
-
-</div> -->
+</div>
   </div>
 </template>
 
 <script>
-  import axios from 'axios'
+	import axios from 'axios'
 export default {
   name: 'new',
   data () {
     return {
-      info: []
+      info: {}
     }
   },
   mounted () {
     axios
-      .get('http://127.0.0.1:8000/weather/')
-      .then(response => (this.info = response.data.cities));
+      .get('http://127.0.0.1:8000/weather/Rijeka/5')
+      .then(response => (this.info = response.data.day_1));
   }
 }
 </script>
@@ -49,4 +31,3 @@ export default {
   color: white;
 }
 </style>
-

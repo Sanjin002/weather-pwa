@@ -6,12 +6,21 @@
      
       
       <router-view></router-view>
+      <body ononline="onFunction()" onoffline="offFunction()">
+        </body>
      </main>
 
   </div>
 </template>
 
 <script>
+  function onFunction() {
+  alert ("Your browser is working online.");
+}
+
+function offFunction() {
+  alert ("Your browser is working offline.");
+}
   import Crops from '@/components/Crops'
   //import Home from '@/components/Home'
   import Navbar from '@/components/Navbar'
