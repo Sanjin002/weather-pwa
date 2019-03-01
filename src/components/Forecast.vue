@@ -131,10 +131,10 @@
                <p>{{forecast5[12].weather}}</p>
           </div>
           <div class="tri col">
-            <h4>{{forecast5[18].hour}}h</h4>
-              <p> {{forecast5[18].temperature}} °C</p>
+            <h4>{{forecast5[16].hour}}h</h4>
+              <p> {{forecast5[16].temperature}} °C</p>
                 <img class="slika" src="./assets/kisa.png">
-               <p>{{forecast5[18].weather}}</p>
+               <p>{{forecast5[16].weather}}</p>
           </div>
         </div>
       </div>  
@@ -146,6 +146,8 @@
 import axios from 'axios'
 export default {
   name: 'forecast',
+  components: {
+  },
   data () {
     return { 
       forecast: [],

@@ -125,6 +125,12 @@ export default {
   
 
 }
+.span {
+  color: white;
+}
 
+span {
+  color: white;
+}
 
 </style>
