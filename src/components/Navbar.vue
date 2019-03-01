@@ -25,12 +25,12 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-         <select v-model="selected">
-          <option disabled value="">Select the city</option>
-          <option v-for="city in cities"> 
-            {{city.name}}</option>
-          </select>
-        <span>Selected: {{ selected }}</span>
+        <b-nav-form>
+          <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search" />
+          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+        </b-nav-form>
+
+        
 
         
       </b-navbar-nav>
@@ -40,27 +40,12 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   name: 'navbar',
   data () {
     return {
-     cities: [],
-     selected: ''
-
+     
     }
-  },
-  mounted () {
-    axios
-      .get('http://127.0.0.1:8000/weather/')
-      .then(response => {
-        (this.cities = response.data.cities);
-      });
-  },
-  getData (city) {
-    axios
-       .get('http://127.0.0.1:8000/weather/' + city + '/5')
-       .then(response => console.log(response.data))
   }
 }
 </script>
