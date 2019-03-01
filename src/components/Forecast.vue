@@ -165,7 +165,6 @@ export default {
         (this.forecast4 = response.data.day_4);
         (this.forecast5 = response.data.day_5);});
   },
-  components: {CommitChart }
 }
 </script>
 
