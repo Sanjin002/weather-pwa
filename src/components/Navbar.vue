@@ -25,22 +25,22 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-         <select v-model="selected">
+         <select v-model="selected" @click="emitGlobalClickEvent()">
           <option disabled value="">Select the city</option>
           <option v-for="city in cities"> 
             {{city.name}}</option>
           </select>
         <span>Selected: {{ selected }}</span>
-
-        
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
+  <app-forecast :selected='selected'></app-forecast>
 </div>
 </template>
 
 <script>
 import axios from 'axios'
+import Forecast from '@/components/Forecast'
 export default {
   name: 'navbar',
   data () {
@@ -52,7 +52,7 @@ export default {
   },
   mounted () {
     axios
-      .get('http://127.0.0.1:8000/weather/')
+      .get('http://meteo.pointjupiter.co')
       .then(response => {
         (this.cities = response.data.cities);
       });
@@ -61,7 +61,12 @@ export default {
     axios
        .get('http://127.0.0.1:8000/weather/' + city + '/5')
        .then(response => console.log(response.data))
-  }
+  },
+  methods: {
+        emitEventChanged () {
+            $emit('CustomEventInputChanged', this.city);
+        }
+}
 }
 </script>
 

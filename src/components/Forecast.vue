@@ -1,7 +1,10 @@
 <template>
 <div class="container">
+  <h5>{{datum.location}}</h5>
   <div class="row">
-    <h5>Današnji dan</h5>
+    <div v-for="datum in datum">
+      <h5>{{datum[0].weekday}}  {{datum[0].date}} </h5>
+    </div>
     <div v-for="hour in forecast">
       <div class="col-10 weather">       
         <div class="row">
@@ -16,7 +19,9 @@
     </div>
   </div>
   <div class="row">
-    <h5>Dan 2</h5>
+    <div v-for="datum in datum">
+      <h5>{{datum[1].weekday}}  {{datum[1].date}}</h5>
+    </div>
       <div class="col-10 weather">       
         <div class="row">
           <div class="tri col">
@@ -47,7 +52,9 @@
       </div>
   </div>
   <div class="row">
-    <h5>Dan 3</h5>
+    <div v-for="datum in datum">
+      <h5>{{datum[2].weekday}}  {{datum[2].date}}</h5>
+    </div>
     <div class="col-10 weather">       
         <div class="row">
           <div class="tri col">
@@ -78,7 +85,9 @@
       </div>
   </div>
   <div class="row">
-    <h5>Dan 4</h5>
+    <div v-for="datum in datum">
+      <h5>{{datum[3].weekday}}  {{datum[3].date}}</h5>
+    </div>
     <div class="col-10 weather">       
         <div class="row">
           <div class="tri col">
@@ -109,7 +118,9 @@
       </div>
   </div>
   <div class="row">
-    <h5>Dan 5</h5>
+    <div v-for="datum in datum">
+      <h5>{{datum[4].weekday}}  {{datum[4].date}}</h5>
+    </div>
     <div class="col-10 weather">       
         <div class="row">
           <div class="tri col">
@@ -139,26 +150,33 @@
         </div>
       </div>  
   </div>
+  <h5>{{city}}</h5>
 </div>
 </template>
 
 <script>
 import axios from 'axios'
+import Navbar from '@/components/Navbar'
 export default {
   name: 'forecast',
   components: {
+    Navbar
   },
+  props: ['selected'],
   data () {
     return { 
+      datum:[],
       forecast: [],
       forecast2: [],
       forecast3: [],
       forecast4: [],
       forecast5: [],
+      city: '',
        
     }
   },
   mounted () {
+    var x = 'http://meteo.pointjupiter.co/'+this.city;
     axios
       .get('http://127.0.0.1:8000/weather/Rijeka/5')
       .then(response => {(this.forecast = response.data.day_1);
@@ -166,7 +184,17 @@ export default {
         (this.forecast3 = response.data.day_3);
         (this.forecast4 = response.data.day_4);
         (this.forecast5 = response.data.day_5);});
+  
+    axios
+      .get(x)
+      .then(response => {(this.datum = response.data);
+      });
   },
+  methods: {
+        doSomenthing ( data ) {
+            this.city = data;
+        }
+    }
 }
 </script>
 
