@@ -1,65 +1,171 @@
 <template>
-<div class="container  ">
+<div class="container">
   <div class="row">
-
-<div v-for="f in forecast">
-  <h5>{{f}}</h5>
-  </div>
-
-    <!-- <div v-for="fore in forecast">
-      <h5>{{fore[2]}}</h5>
-      <div v-for="f in fore">
-        <h5>{{f.hour}}</h5>
+    <h5>Današnji dan</h5>
+    <div v-for="hour in forecast">
+      <div class="col-10 weather">       
+        <div class="row">
+          <div class="tri col">
+            <h4>{{hour.hour}}h</h4>
+              <p> {{hour.temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{hour.weather}}</p>
+          </div>
+        </div>
       </div>
-    </div> -->
-
-<!-- 
-    <div v-for="fore in forecast">
-    <div class="col-10 weather" >       
-           <div class="row">
-             <div class="tri col">
-              <h4>{{fore[0].hour}}</h4>
-              <p>  {{  fore[0].temperature }} °C</p>
-
-               <img class="slika" src="./assets/kisa.png">
-               <p>Partly sunny</p>
-             </div>
-             </div>
-             </div>0
-
-           </div>
-           <div v-for="fore in forecasts">
-    <div class="col-10 weather" >       
-           <div class="row">
-             <div class="tri col">
-              <h4>{{fore.hour}}</h4>
-              <p>  {{  fore.temperature }} °C</p>
-
-               <img class="slika" src="./assets/kisa.png">
-               <p>Partly sunny</p>
-             </div>
-             </div>
-             </div>
-           </div> -->
+    </div>
+  </div>
+  <div class="row">
+    <h5>Dan 2</h5>
+      <div class="col-10 weather">       
+        <div class="row">
+          <div class="tri col">
+            <h4>{{forecast2[0].hour}}h</h4>
+              <p> {{forecast2[0].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast2[0].weather}}</p>
+          </div>
+          <div class="tri col">
+            <h4>{{forecast2[6].hour}}h</h4>
+              <p> {{forecast2[6].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast2[6].weather}}</p>
+          </div>
+          <div class="tri col">
+            <h4>{{forecast2[12].hour}}h</h4>
+              <p> {{forecast2[12].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast2[12].weather}}</p>
+          </div>
+          <div class="tri col">
+            <h4>{{forecast2[18].hour}}h</h4>
+              <p> {{forecast2[18].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast2[18].weather}}</p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <h5>Dan 3</h5>
+    <div class="col-10 weather">       
+        <div class="row">
+          <div class="tri col">
+            <h4>{{forecast3[0].hour}}h</h4>
+              <p> {{forecast3[0].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast3[0].weather}}</p>
+          </div>
+          <div class="tri col">
+            <h4>{{forecast3[6].hour}}h</h4>
+              <p> {{forecast3[6].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast3[6].weather}}</p>
+          </div>
+          <div class="tri col">
+            <h4>{{forecast3[12].hour}}h</h4>
+              <p> {{forecast3[12].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast3[12].weather}}</p>
+          </div>
+          <div class="tri col">
+            <h4>{{forecast3[18].hour}}h</h4>
+              <p> {{forecast3[18].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast3[18].weather}}</p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <h5>Dan 4</h5>
+    <div class="col-10 weather">       
+        <div class="row">
+          <div class="tri col">
+            <h4>{{forecast4[0].hour}}h</h4>
+              <p> {{forecast4[0].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast4[0].weather}}</p>
+          </div>
+          <div class="tri col">
+            <h4>{{forecast4[6].hour}}h</h4>
+              <p> {{forecast4[6].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast4[6].weather}}</p>
+          </div>
+          <div class="tri col">
+            <h4>{{forecast4[12].hour}}h</h4>
+              <p> {{forecast4[12].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast4[12].weather}}</p>
+          </div>
+          <div class="tri col">
+            <h4>{{forecast4[18].hour}}h</h4>
+              <p> {{forecast4[18].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast4[18].weather}}</p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <h5>Dan 5</h5>
+    <div class="col-10 weather">       
+        <div class="row">
+          <div class="tri col">
+            <h4>{{forecast5[0].hour}}h</h4>
+              <p> {{forecast5[0].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast5[0].weather}}</p>
+          </div>
+          <div class="tri col">
+            <h4>{{forecast5[6].hour}}h</h4>
+              <p> {{forecast5[6].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast5[6].weather}}</p>
+          </div>
+          <div class="tri col">
+            <h4>{{forecast5[12].hour}}h</h4>
+              <p> {{forecast5[12].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast5[12].weather}}</p>
+          </div>
+          <div class="tri col">
+            <h4>{{forecast5[18].hour}}h</h4>
+              <p> {{forecast5[18].temperature}} °C</p>
+                <img class="slika" src="./assets/kisa.png">
+               <p>{{forecast5[18].weather}}</p>
+          </div>
+        </div>
+      </div>  
   </div>
 </div>
 </template>
 
 <script>
-  import axios from 'axios'
+import axios from 'axios'
 export default {
   name: 'forecast',
   data () {
     return { 
-      forecast: []
+      forecast: [],
+      forecast2: [],
+      forecast3: [],
+      forecast4: [],
+      forecast5: [],
        
     }
   },
   mounted () {
     axios
       .get('http://127.0.0.1:8000/weather/Rijeka/5')
-      .then(response => (this.forecast = response.data));
+      .then(response => {(this.forecast = response.data.day_1);
+        (this.forecast2 = response.data.day_2);
+        (this.forecast3 = response.data.day_3);
+        (this.forecast4 = response.data.day_4);
+        (this.forecast5 = response.data.day_5);});
   },
+  components: {CommitChart }
 }
 </script>
 
