@@ -10,7 +10,7 @@
  </div>-->
 
  <div class="container-fluid">
-  <b-navbar class="crta" toggleable="lg" type="dark"  >
+  <b-navbar class="crta " toggleable="lg" type="dark"  >
     
 
     <b-navbar-toggle target="nav_collapse" />
@@ -106,6 +106,7 @@ export default {
   font-size: 25px;
   color: white;
   font-family: sans-serif;
+  
    
 }
 
@@ -127,7 +128,9 @@ export default {
 .crta {
   border-bottom:1px solid white;
   padding-bottom:5px;
-  
+
+ 
+ 
 
 }
 .span {
