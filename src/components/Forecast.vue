@@ -1,4 +1,13 @@
 <template>
+<div>
+  <b-navbar-nav>
+         <select v-model="selected">
+          <option>Select the city</option>
+          <option v-for="city in cities"> 
+            {{city.name}}</option>
+          </select>
+        <span>Selected: {{ selected }}</span>
+      </b-navbar-nav>
 <div class="container">
   <h5>{{datum.location}}</h5>
   <div class="row">
@@ -152,6 +161,7 @@
   </div>
   <h5>{{city}}</h5>
 </div>
+</div>
 </template>
 
 <script>
@@ -162,7 +172,7 @@ export default {
   components: {
     Navbar
   },
-  props: ['selected'],
+  
   data () {
     return { 
       datum:[],
@@ -171,14 +181,16 @@ export default {
       forecast3: [],
       forecast4: [],
       forecast5: [],
-      city: '',
+      cities: [],
+      selected:'Prvić',
        
     }
   },
   mounted () {
-    var x = 'http://meteo.pointjupiter.co/'+this.city;
+    var x = 'http://meteo.pointjupiter.co/'+this.selected;
+    var y = 'http://127.0.0.1:8000/weather/'+this.selected+'/5';
     axios
-      .get('http://127.0.0.1:8000/weather/Rijeka/5')
+      .get(y)
       .then(response => {(this.forecast = response.data.day_1);
         (this.forecast2 = response.data.day_2);
         (this.forecast3 = response.data.day_3);
@@ -188,6 +200,12 @@ export default {
     axios
       .get(x)
       .then(response => {(this.datum = response.data);
+      });
+
+      axios
+      .get('http://meteo.pointjupiter.co')
+      .then(response => {
+        (this.cities = response.data.cities);
       });
   },
   methods: {

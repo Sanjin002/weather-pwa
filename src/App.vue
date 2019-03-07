@@ -1,24 +1,31 @@
 <template>
   <div id="app">
-     <main>
-     <Navbar></Navbar>
-    
-     
-      
+    <main>
+      <Navbar v-bind:selected="selected"></Navbar>
       <router-view></router-view>
-        </body>
-     </main>
-
+    </main>
   </div>
 </template>
 
 <script>
   import Navbar from '@/components/Navbar'
+  import Forecast from '@/components/Forecast'
 
 export default {
   name: 'App',
   components: {
-	Navbar
+	Navbar,
+  Forecast
+  },
+  data(){
+    return {
+      selected: '',
+    }
+  },
+  methods:{
+    updateSelected: function(updatedSelected){
+      this.selected = updatedSelected;
+    }
   }
 }
 </script>

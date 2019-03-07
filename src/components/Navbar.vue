@@ -1,14 +1,4 @@
 <template>
- <!--<div class="row">
-  <b-nav class="main-nav">
-    <b-nav-item  class="li a  " to="/">Home</b-nav-item>
-    <b-nav-item to="/Crops">Crops</b-nav-item>
-    <b-nav-item to="/Forecast">Forecast</b-nav-item>
-    <b-nav-item  to="/New">New</b-nav-item>
-    
-  </b-nav>
- </div>-->
-
  <div class="container-fluid">
   <b-navbar class="crta" toggleable="lg" type="dark"  >
     
@@ -24,9 +14,9 @@
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
-         <select v-model="selected" @click="emitGlobalClickEvent()">
-          <option disabled value="">Select the city</option>
+      <b-navbar-nav>
+         <select v-model="selected">
+          <option>Select the city</option>
           <option v-for="city in cities"> 
             {{city.name}}</option>
           </select>
@@ -34,7 +24,6 @@
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
-  <app-forecast :selected='selected'></app-forecast>
 </div>
 </template>
 
@@ -46,7 +35,7 @@ export default {
   data () {
     return {
      cities: [],
-     selected: ''
+     selected:''
 
     }
   },
@@ -57,14 +46,9 @@ export default {
         (this.cities = response.data.cities);
       });
   },
-  getData (city) {
-    axios
-       .get('http://127.0.0.1:8000/weather/' + city + '/5')
-       .then(response => console.log(response.data))
-  },
   methods: {
-        emitEventChanged () {
-            $emit('CustomEventInputChanged', this.city);
+        model: function(){
+          this.$emit('changeSelected','Zagreb');
         }
 }
 }
